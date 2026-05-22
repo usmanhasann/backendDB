@@ -17,12 +17,18 @@
 const express = require('express')
 const app = express()
 
+// Import CORS middleware
+const cors = require('cors')
+
 // Import body-parser to parse incoming JSON data from requests
 const bodyParser = require('body-parser')
 
 // ============================================
 // 2. MIDDLEWARE CONFIGURATION
 // ============================================
+// Enable CORS
+app.use(cors())
+
 // Enable JSON body parsing - converts incoming JSON to JavaScript objects
 // This MUST come before route definitions
 app.use(bodyParser.json())
